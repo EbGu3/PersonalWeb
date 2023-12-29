@@ -1,27 +1,54 @@
-void main() {
+void main(List<String> arguments) {
   print("dev mode");
-  print(suma(2, 2));
 
-  final calculadora = Calculadora();
-  print(calculadora.suma(2, 3));
+  /*
+    Tipo de datos
+      - Primitivos:
+        # int
+        # double
+        # bool
+        # String
+
+      - Dinamicos:
+        # dynamic
+  */
+  int ageOfPet = 10;
+  double priceOfPet = 100.99;
+  bool enable = false;
+  String namePet = 'Meteoro';
+
+  var lastNamePet = 'Sun';
+  var visitPet = 2.0;
+
+  dynamic valorDinamico = "Eber :v";
+  print(valorDinamico.runtimeType);
+  valorDinamico = 1;
+  valorDinamico = false;
+  print(valorDinamico.runtimeType);
+
+  Object obj;
+
+  final opTxt = OperacionesTexto();
+  print(opTxt.concatenacion("hola", "mundo"));
+  print(opTxt.concatenacionNumero("hola", 27));
+  print(opTxt.concatenacionDinamico("hola", false));
+  print(opTxt.longitudCadena("hola mundo"));
 }
 
-/// Clase, que realiza operaciones matematicas :V
-class Calculadora {
-  ///Suma de dos numeros enteros
-  ///[a] Valor entero numero 1
-  ///[b] Valor entero numero 2
-  ///```
-  ///suma(1, 4) = 5;
-  ///```
-  int suma(int a, int b) {
-    //  Comentario de linea :v
-    /* 
-        Comentario 
-        de 
-        bloque 
-        v:
-    */
-    return a + b;
+class OperacionesTexto {
+  String concatenacion(String txt1, String txt2) {
+    return txt1 + txt2;
+  }
+
+  String concatenacionNumero(String txt1, int num) {
+    return txt1 + num.toString();
+  }
+
+  String concatenacionDinamico(String txt, dynamic value) {
+    return 'Texto: $txt - Dinamico: $value';
+  }
+
+  String longitudCadena(String cadena) {
+    return '${cadena.length}';
   }
 }
