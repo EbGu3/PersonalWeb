@@ -11,6 +11,11 @@ void main(List<String> arguments) {
 
       - Dinamicos:
         # dynamic
+
+      - Inmutables
+        # finaly: asignados en tipo de ejecucion
+        # contat: asignados antes de compilar
+
   */
   int ageOfPet = 10;
   double priceOfPet = 100.99;
@@ -50,5 +55,9 @@ class OperacionesTexto {
 
   String longitudCadena(String cadena) {
     return '${cadena.length}';
+  }
+
+  String getFechaActual() {
+    return '${DateTime.now()}';
   }
 }
