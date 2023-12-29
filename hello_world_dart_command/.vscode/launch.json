@@ -1,0 +1,16 @@
+{
+ "configurations": [
+  {
+    "name": "Dev mode",
+    "type": "dart",
+    "request": "launch",
+    "program": "bin/dev.dart"
+  },
+  {
+    "name": "Dev prod",
+    "type": "dart",
+    "request": "launch",
+    "program": "bin/prod.dart"
+  }
+ ] 
+}
