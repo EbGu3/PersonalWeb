@@ -1,4 +1,5 @@
 void main(List<String> arguments) {
+  // Solo se puede definir una vez el constructor de una clase
   Pet instanciaPet = Pet("", 0);
   print("Son iguales = ${instanciaPet.verificarSiExiste("Luna")}");
 
@@ -48,5 +49,34 @@ class Carro {
   @override
   int get hashCode {
     return modelo.hashCode ^ color.hashCode;
+  }
+}
+
+/// Definir los atributos, y indicar
+/// que los atributos se inicializaran despues
+class Casa {
+  late String direccion;
+  late String zona;
+}
+
+/// Clase con constructor de tipo nombre
+class Persona {
+  String nombre;
+  String apellido;
+  int edad;
+
+  Persona({required this.nombre, required this.apellido, required this.edad});
+}
+
+class Doctor {
+  String nombre;
+  String direccion;
+
+  Doctor({required this.nombre, required this.direccion}) {
+    printInformacionDoctor();
+  }
+
+  void printInformacionDoctor() {
+    print('Nombre Doctor = $nombre, Direccion Clinica = $direccion');
   }
 }
