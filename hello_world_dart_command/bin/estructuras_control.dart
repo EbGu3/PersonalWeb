@@ -1,7 +1,5 @@
 import 'dart:collection';
 
-import 'package:test/test.dart';
-
 void main(List<String> arguments) {
   // INFO: Ejemplo IF
   var nombre = "Ivanna:";
@@ -22,6 +20,10 @@ void main(List<String> arguments) {
     print('Key   = ${producto.key}');
     print('Value = ${producto.value}');
   }
+
+  var instanciaProducto = Producto();
+  instanciaProducto.calcularIVAGuatemala(precio: null);
+  instanciaProducto.calcularIVAGuatemala(precio: 100);
 }
 
 /// Ejemplos de como enviar parametros y como se llamada cada tipo de parametro
@@ -92,5 +94,18 @@ class Producto {
     var nombreProducto = nombre.isNotEmpty ? 'Producto = $nombre' : '';
 
     print('Precio = $precio $nombreProducto');
+  }
+
+  void calcularIVAGuatemala({double? precio}) {
+    print(precio);
+    if (precio == null) {
+      print("No se calculo IVA");
+      return;
+    }
+
+    /// null check operator !
+    /// a un valor que es de tipo "double?" lo convierte a uno "double"
+    var ivaProducto = (precio!) * 0.12;
+    print('IVA Producto = $ivaProducto');
   }
 }
