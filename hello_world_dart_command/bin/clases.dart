@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 void main(List<String> arguments) {
   // Solo se puede definir una vez el constructor de una clase
   Pet instanciaPet = Pet("", 0);
@@ -8,6 +10,10 @@ void main(List<String> arguments) {
   print("Carros iguales = ${instanciaCarro1 == instanciaCarro2}");
   print(
       "Carros iguales = ${instanciaCarro1.hashCode == instanciaCarro2.hashCode}");
+
+  Doctor doctor =
+      Doctor.setBirtday("Ivanna", "Guatemala", DateTime.parse("1999-08-27"));
+  doctor.printInformacionDoctor();
 }
 
 class Pet {
@@ -71,12 +77,23 @@ class Persona {
 class Doctor {
   String nombre;
   String direccion;
+  int edad;
 
-  Doctor({required this.nombre, required this.direccion}) {
+  Doctor({required this.nombre, required this.direccion, this.edad = 0}) {
     printInformacionDoctor();
   }
 
+  factory Doctor.setBirtday(
+      String nombreDoctor, String direccionDoctor, DateTime fecha) {
+    var daysDifferences = DateTime.now().difference(fecha).inDays;
+    int edadDoctor = daysDifferences ~/ 365;
+
+    return Doctor(
+        nombre: nombreDoctor, direccion: direccionDoctor, edad: edadDoctor);
+  }
+
   void printInformacionDoctor() {
-    print('Nombre Doctor = $nombre, Direccion Clinica = $direccion');
+    print(
+        'Nombre Doctor = $nombre, Direccion Clinica = $direccion, Edad = $edad');
   }
 }
