@@ -1,5 +1,7 @@
 import 'package:hello_world_dart_command/models/pet.dart';
 
+import 'clases3.dart';
+
 void main(List<String> arguments) {
   final persona = Persona(nombre: 'Juan', edad: 20);
   print('Mi papa se llama = ${persona.nombre}');
@@ -7,4 +9,8 @@ void main(List<String> arguments) {
   persona.updateEdad(52);
   print('Su edad es = ${persona.edad}');
   persona.nombre = "Alfredo";
+
+  final casa = Casa();
+  casa.cerrarPuertas();
+  casa.printHistorial();
 }
