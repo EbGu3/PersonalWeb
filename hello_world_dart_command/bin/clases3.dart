@@ -1,4 +1,13 @@
-void main(List<String> arguments) {}
+import 'api_key.dart';
+import 'clases4.dart';
+
+void main(List<String> arguments) {
+  updateApiKey("probando ando x)");
+  print(apiKey);
+
+  Animal.updateCounter(100);
+  print(Animal.counter);
+}
 
 class Casa {
   _Historial instanciaHistoria = _Historial();

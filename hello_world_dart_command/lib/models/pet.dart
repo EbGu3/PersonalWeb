@@ -17,8 +17,8 @@ class Pet {
 //  TODO: Inicializar variables privadas
 //  Metodo 2
 class Car {
-  String _modelo;
-  String _color;
+  final String _modelo;
+  final String _color;
 
   Car({required String modelo, required String color})
       : _modelo = modelo,

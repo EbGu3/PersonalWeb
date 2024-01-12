@@ -105,7 +105,7 @@ class Producto {
 
     /// null check operator !
     /// a un valor que es de tipo "double?" lo convierte a uno "double"
-    var ivaProducto = (precio!) * 0.12;
+    var ivaProducto = (precio) * 0.12;
     print('IVA Producto = $ivaProducto');
   }
 }
